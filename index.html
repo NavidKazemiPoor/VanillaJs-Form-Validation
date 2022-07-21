@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="FA_IR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VanillaJS Form Validation</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="fonts/css/all.css">
+  </head>
+  <body dir="rtl">
+    <form>
+      <h2>فرم ثبت نام</h2>
+      <div class="input-container">
+        <label for="username">نام کاربری:</label>
+        <input
+          dir="ltr"
+          type="text"
+          name="username"
+          id="username"
+        />
+        <span class="err"></span>
+      </div>
+
+      <div class="input-container">
+        <label for="email">ایمیل:</label>
+        <input
+          dir="ltr"
+          type="email"
+          name="email"
+          id="email"
+        />
+        <span class="err"></span>
+
+      </div>
+
+      <div class="input-container">
+        <label for="pass">رمز عبور:</label>
+        <input
+          dir="ltr"
+          type="password"
+          name="pass"
+          id="pass"
+        />
+        <span class="err"></span>
+
+      </div>
+
+      <div class="input-container">
+        <label for="confirmpass">تایید رمز عبور:</label>
+        <input
+          dir="ltr"
+          type="password"
+          name="confirmpass"
+          id="confirmpass"
+        />
+        <span class="err"></span>
+      </div>
+      <button type="submit" class="btn-register">عضویت</button>
+      <p class="info">یا عضویت از طریق</p>
+      <div class="social">
+        <i class="fa-brands fa-google" style="color:#EA4335;"></i>
+        <i class="fa-brands fa-twitter" style="color: #1DA1F2;"></i>
+        <i class="fa-brands fa-facebook-f" style="color: #4267B2;"></i>
+      </div>
+
+    </form>
+  </body>
+  <script src="js/main.js"></script>
+</html>
