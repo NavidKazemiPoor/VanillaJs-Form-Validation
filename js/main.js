@@ -7,50 +7,51 @@ let userName = document.getElementById("username");
 const handleSubmit = (e) => {
   e.preventDefault();
   checkInputLength(email, "ایمیل نمیتواند خالی باشد");
-  checkInputLength(userName, "نام کاربری نمیتواند خالی باشد");
+  checkInputLength(userName, "نام کاربری نباید کمتر از سه حرف باشد  ");
   checkPass(pass, confirmPass, "پسورد با تایید آن یکسان نیست");
   checkEmail(email, "ایمیل معتبر وارد کنید");
 };
 
 // checking Function
 const checkInputLength = (input, message) => {
-  if (input.value.length == 0) {
-    isNotOk(input,message);
-  
+  if (
+    input.value.length == 0 ||
+    (input.name == "username" && input.value.length < 3)
+  ) {
+    isNotOk(input, message);
   } else {
-    isOk(input,message);
+    isOk(input, message);
   }
 };
 const checkPass = (pass, pass1, message) => {
   if (pass.value == pass1.value && pass.value) {
-    isOk(pass,message);
-    isOk(pass1,message);
-   
+    isOk(pass, message);
+    isOk(pass1, message);
   } else {
-    isNotOk(pass,message);
-    isNotOk(pass1,message);
+    isNotOk(pass, message);
+    isNotOk(pass1, message);
   }
 };
 const checkEmail = (input, message) => {
   if (!validateEmail(input.value)) {
-    isNotOk(input,message);
+    isNotOk(input, message);
   } else {
-   isOk(input,message);
+    isOk(input, message);
   }
 };
 
-// style func 
-const isNotOk = (input,message) =>{
-    input.style.border = "1px solid  rgba(224, 46, 46, 0.781)";
-    input.nextElementSibling.innerHTML = message;
-}
-const isOk = (input,message) =>{
-    input.style.border = "1px solid #159300";
-    input.nextElementSibling.innerHTML = "";
-}
+// style func
+const isNotOk = (input, message) => {
+  input.style.border = "1px solid  rgba(224, 46, 46, 0.781)";
+  input.nextElementSibling.innerHTML = message;
+};
+const isOk = (input, message) => {
+  input.style.border = "1px solid #159300";
+  input.nextElementSibling.innerHTML = "";
+};
 // Event Listener
 userName.addEventListener("input", () =>
-  checkInputLength(userName, "نام کاربری نباید خالی باشد")
+  checkInputLength(userName, "نام کاربری نباید کمتر از سه حرف باشد")
 );
 pass.addEventListener("input", () =>
   checkInputLength(pass, " پسورد نباید خالی باشد")
@@ -73,7 +74,6 @@ let form = document
 
 // regex email
 const validateEmail = (em) => {
-  
   const re =
     /^([\w\!\#$\%\&\'\*\+\-\/\=\?\^\`{\|\}\~]+\.)*[\w\!\#$\%\&\'\*\+\-\/\=\?\^\`{\|\}\~]+@((((([a-z0-9]{1}[a-z0-9\-]{0,62}[a-z0-9]{1})|[a-z])\.)+[a-z]{2,6})|(\d{1,3}\.){3}\d{1,3}(\:\d{1,5})?)$/i;
   return em.match(re);
