@@ -1,3 +1,3 @@
-پیش نمایش آنلاین:
+پیش نمایش آنلاین | Online Preview
 
-http://www.naweedkazemipoor.infinityfreeapp.com
+https://velvety-torte-95c9dd.netlify.app/
